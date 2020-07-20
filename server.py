@@ -16,7 +16,7 @@ app.secret_key = "pair_project"
 def main_page():
 	"""Displays main page."""
 
-return render_template("main_page.html")
+	return render_template("index.html")
 
 
 
@@ -24,4 +24,4 @@ return render_template("main_page.html")
 
 if __name__ == '__main__':
 	# connect_to_db(app)
-	app.run()
+	app.run(host='0.0.0.0', debug=True)
