@@ -12,13 +12,14 @@ class App extends React.Component{
 	}
 
 	handleChange(evt){
-		this.setState({evt.target.id: evt.target.value});
+		this.setState({[evt.target.id]: evt.target.value});
 		}
 
 
 
 
 	render(){
+		console.log(this.state);
 		return (
 			<div> 
 				<form>
