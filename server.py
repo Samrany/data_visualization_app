@@ -18,8 +18,14 @@ def main_page():
 
 	return render_template("index.html")
 
+@app.route('/api/get_data', methods = ['GET'])
+def get_sales_info():
+	""""""
+	location_chosen = request.args.get("locationChosen")
+	#DB QUERY TBD
+	sales_info = {"March": 300, "April": 400, "May": 500} #temporary
 
-
+	return jsonify(sales_info)
 
 
 if __name__ == '__main__':
