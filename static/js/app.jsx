@@ -7,7 +7,7 @@ class App extends React.Component{
 	constructor(){
 		super();
 		this.state={
-			isloggedin: false, 
+			isloggedin: true, 
 		};
 		this.setLoggedIn = this.setLoggedIn.bind(this);
 	}
@@ -74,8 +74,9 @@ class Data extends React.Component{
 
 		return (
 			<div> 
-				
-				<BarChart data={data} width="500" height="450"/>
+				{this.state.salesInfo.location == undefined ? null : 
+					<BarChart data={data} width="20" height="20"/>
+				}
 
 				<form onSubmit={this.handleSubmit}>
 					<select id="locationChosen" placeholder="choose location" value={this.state.locationChosen} onChange={this.handleChange}> 
@@ -145,11 +146,18 @@ ReactDOM.render(
 );
 
 
+// const formData = {
+//                 email: this.state.email,
+//                 password: this.state.password,
+//                 first: this.state.first,
+//                 last: this.state.last
+//             }
+
 		// fetch('/api/dataset', {
   //               headers: {
   //                   'Content-Type': 'application/json'
   //               },
-  //               method: 'get',
+  //               method: 'post',
   //               // body: JSON.stringify(formData) post in body
   //           })
   //               .then(res => res.json())
