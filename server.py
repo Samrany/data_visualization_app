@@ -3,6 +3,7 @@
 
 from flask import (Flask, render_template, request, 
 				   session, redirect, jsonify)
+from datetime import datetime
 
 # from model import connect_to_db
 # import crud
@@ -23,7 +24,9 @@ def get_sales_info():
 	""""""
 	location_chosen = request.args.get("locationChosen")
 	#DB QUERY TBD
-	sales_info = {"March": 300, "April": 400, "May": 500} #temporary
+	sales_info = {'labels':['March', 'April', 'May'],
+				  'data':[300, 400, 500]}
+	#sales_info = {1: 300, 2: 400, 3: 500} #temporary
 
 	return jsonify(sales_info)
 
