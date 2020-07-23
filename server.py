@@ -25,10 +25,22 @@ def get_sales_info():
 	location_chosen = request.args.get("locationChosen")
 	#DB QUERY TBD
 	sales_info = {'labels':['March', 'April', 'May'],
-				  'data':[300, 400, 500]}
+				  'data':[300, 400, 500], 'location': location_chosen}
 	#sales_info = {1: 300, 2: 400, 3: 500} #temporary
 
 	return jsonify(sales_info)
+
+@app.route('/api/login', methods = ['GET'])
+def login():
+	""""""
+
+	email = request.args.get("email")
+	password = request.args.get("password")
+	#query DB IF EXIST RETURN TRUE
+	login_cred = True
+
+	return jsonify(login_cred)
+
 
 
 if __name__ == '__main__':
