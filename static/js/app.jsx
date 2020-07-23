@@ -65,6 +65,7 @@ class App extends React.Component{
 				label: this.state.locationChosen,
 				backgroundColor: 'rgb(255, 99, 132)',
 				borderColor: 'rgb(255, 99, 132)',
+				minBarLength: 2,
 				data: this.state.salesInfo.data
 			}]
 		}
@@ -80,9 +81,7 @@ class App extends React.Component{
 						<option value="locationC"> Location C </option>				
 					</select>
 					<input type="submit"/> 
-
 				</form>
-
 
 			</div>
 			)
